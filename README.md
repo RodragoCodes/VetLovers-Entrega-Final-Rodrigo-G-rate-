@@ -9,3 +9,5 @@ Página web pensada para uso interno de una clínica veterinaria, desarrollada p
 4) Pestaña Chat: en esta pestaña se puede interactuar dejando comentarios en nuestra página web a los diferentes usuarios y a la propia clínica.
 
 Cabe destacar que el acceso a estas pestañas solo se puede realizar si te logeas previamente, adicionalmente la página web cuenta con un sistema de cesiones en cuyas funciones están la de logear(iniciar sesión), registrarte y desloguear (Cerrar sesión). Aparte puedes actualizar tu información de perfil y lo avatar de página.
+
+Link a video de funcionalidad = https://drive.google.com/file/d/1HGvh_XwNRFt-YaOR0XWYGL-LbkhvrP8r/view?usp=sharing
