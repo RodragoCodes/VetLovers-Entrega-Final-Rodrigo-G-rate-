@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="utf-8">
+    <title>
+    {% block titulo %}
+        
+    {% endblock titulo %}
+        </title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
+
+    <!-- Favicon -->
+    <link href="{% static 'productos/img/favicon.ico' %}" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet"> 
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Flaticon Font -->
+    <link href="{% static 'productos/lib/flaticon/font/flaticon.css' %}" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="{% static 'productos/lib/owlcarousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+    <link href="{% static 'productos/lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css' %}" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="{% static 'productos/css/style.css' %}" rel="stylesheet">
+</head>
+
+<body>
+   <!-- Topbar Start -->
+   <div class="container-fluid">
+    <div class="row bg-secondary py-2 px-lg-5">
+        <div class="col-lg-6 text-center text-lg-left mb-2 mb-lg-0">
+            <div class="d-inline-flex align-items-center">
+                {% if request.user.username %}             
+                <img src="{{url}}" alt="Avatar" style="width: 30px;">
+                <a class="text-white px-3" href="">Bienvenido {{request.user.username}}</a>
+                <span class="text-white">|</span>
+                {% endif %}
+                <a class="text-white px-3" href="{% url 'EditarUsuario' %}">Editar</a>
+                <span class="text-white">|</span>
+                <a class="text-white pl-3" href="{% url 'AgregarAvatar' %}">Cambiar Avatar</a>
+            </div>
+        </div>
+        <div class="col-lg-6 text-center text-lg-right">
+            <div class="d-inline-flex align-items-center">
+                <a class="text-white px-3" href="">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a class="text-white px-3" href="">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a class="text-white px-3" href="">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a class="text-white px-3" href="">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a class="text-white pl-3" href="">
+                    <i class="fab fa-youtube"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="row py-3 px-lg-5">
+        <div class="col-lg-4">
+            <a href="{% url 'inicio' %}" class="navbar-brand d-none d-lg-block">
+                <h1 class="m-0 display-5 text-capitalize"><span class="text-primary">Vet</span>Lovers</h1>
+            </a>
+        </div>
+        <div class="col-lg-8 text-center text-lg-right">
+            <div class="d-inline-flex align-items-center">
+                <div class="d-inline-flex flex-column text-center pr-3 border-right">
+                    <h6>Horario de atención</h6>
+                    <p class="m-0">8.00AM - 9.00PM</p>
+                </div>
+                <div class="d-inline-flex flex-column text-center px-3 border-right">
+                    <h6>Nuestro Email</h6>
+                    <p class="m-0">example@example.com</p>
+                </div>
+                <div class="d-inline-flex flex-column text-center pl-3">
+                    <h6>Nuestro numero de servicio</h6>
+                    <p class="m-0">+099 999 9999</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <!-- Topbar End -->
+
+    <!-- Navbar Start -->
+    <div class="container-fluid p-0">
+        <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3 py-lg-0 px-lg-5">
+            <a href="" class="navbar-brand d-block d-lg-none">
+                <h1 class="m-0 display-5 text-capitalize font-italic text-white"><span class="text-primary">Safety</span>First</h1>
+            </a>
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-between px-3" id="navbarCollapse">
+                <div class="navbar-nav mr-auto py-0">
+                    <a href=" {% url 'inicio' %}" class="nav-item nav-link active">Home</a>
+                    <a href=" {% url 'about' %}" class="nav-item nav-link">Acerca de nostros</a>
+                    {% if  request.user.username %}                                           
+                    
+                    <a href="{% url 'clientes' %}" class="nav-item nav-link">Clientes</a>
+                    <a href="{% url 'precios' %}" class="nav-item nav-link">Precios y Procedimientos</a>
+                    <a href="{% url 'mascotas' %}" class="nav-item nav-link">Mascotas Inscritas</a>
+                    <a href="{% url 'chat' %}" class="nav-item nav-link">Chat</a>
+                    
+                    {% endif %}
+                </div>
+                
+                {% if request.user.username %} 
+                <a href="{% url 'logout' %}" class="btn btn-lg btn-primary px-3 d-none d-lg-block">Logout</a>
+                {% else %}
+                
+                <a href="{% url 'login' %}" class="btn btn-lg btn-primary px-3 d-none d-lg-block">Login</a>
+                &nbsp
+                <a href="{% url 'register' %}" class="btn btn-lg btn-secondary px-3 d-none d-lg-block">Registrate</a>
+                {% endif %}
+            </div>
+        </nav>
+    </div>
+    <!-- Navbar End -->
+    
+    {% block Contenido %}
+        
+    {% endblock Contenido %}
+        
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary back-to-top"><i class="fa fa-angle-double-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/tempusdominus/js/moment.min.js"></script>
+    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+
+    <!-- Contact Javascript File -->
+    <script src="mail/jqBootstrapValidation.min.js"></script>
+    <script src="mail/contact.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+{% extends 'productos/Base.html' %}
+
+{% load static %}
+{% block titulo %}
+   Clientes
+{% endblock titulo %}
+{% block Contenido %}
+    <h1 class="display-4 mb-4"><span class="text-primary">Nuestos</span> <span class="text-secondary">Clientes</span></h1>
+    <br>
+    <div class="mb-5">
+                
+        {% for c in clientes %}
+                              
+            
+                <div class="media mb-4">
+                    <img src="{% static 'productos/img/user2.jpg' %}" alt="Image" class="img-fluid mr-3 mt-1" style="width: 95px;">
+                    <div class="media-body">
+                        <h6>{{c.nombre}} <small><i>{{c.email}}</i></small></h6>
+                        <p>Direccion: {{c.direccion}}</p>
+                        <p>Ciudad de procedencia: {{c.ciudad}}</p>
+                        <p>Atenciones realizadas: {{c.cantidad_atenciones}}</p>
+
+                    </div>
+                </div>
+              
+        {% endfor %}
+    </div>
+    <div class="p-3" style="max-width: 900px;">
+        <a href="{% url 'buscarC' %}" class="btn btn-lg btn-primary mt-3 mt-md-4 px-4">Buscar Cliente</a>
+        <a href="{% url 'clientecrear' %}" class="btn btn-lg btn-secondary mt-3 mt-md-4 px-4">Agregar Nuevo Cliente</a>
+    </div>
+{% endblock %}

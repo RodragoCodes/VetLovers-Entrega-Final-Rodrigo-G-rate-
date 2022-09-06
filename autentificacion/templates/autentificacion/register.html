@@ -1,0 +1,19 @@
+{% extends 'productos/base.html' %}
+{% load static %}
+{% block titulo %}
+    Registrar Usuario app-VetClinica
+{% endblock titulo %}
+{% block Contenido %}
+    
+<br> 
+<body>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" value="Registrate">
+    </form>
+</body>
+
+
+
+{% endblock Contenido %}

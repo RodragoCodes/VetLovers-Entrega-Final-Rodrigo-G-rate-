@@ -1,0 +1,12 @@
+{% extends 'productos/base.html' %}
+{% load static %}
+{% block titulo %}
+    Sesión Cerrada
+{% endblock titulo %}
+{% block Contenido %}
+<br>    
+<h1>Has Cerrado Sesión.</h1>
+<br>
+<a href="{% url 'login' %}" class="btn btn-lg btn-primary mt-3 mt-md-4 px-4">Iniciar Sesión</a>
+
+{% endblock Contenido %}

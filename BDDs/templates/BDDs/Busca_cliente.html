@@ -1,0 +1,25 @@
+{% extends 'productos/base.html' %}
+{% load static %}
+{% block titulo %}
+    Buscar Cliente
+{% endblock titulo %}
+{% block Contenido %}
+    
+<br> 
+<body>
+    <form action= "{% url 'buscarcliente' %}" method="get">
+        <p>
+            Indique un Cliente:
+            <input type="text" name="Cliente">
+            
+        </p>
+        <input type="submit" value="Buscar">
+
+    </form>
+    
+</body>
+
+
+
+{% endblock Contenido %}
+    

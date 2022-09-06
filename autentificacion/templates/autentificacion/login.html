@@ -1,0 +1,21 @@
+{% extends 'productos/base.html' %}
+{% load static %}
+{% block titulo %}
+    Autentificacion app-VetClinica
+{% endblock titulo %}
+{% block Contenido %}
+<br>
+<h1> Favor Iniciar Sesión </h1>
+<br> 
+<body>
+    <form method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" value="Login">
+    </form>
+</body>
+
+
+
+{% endblock Contenido %}
+    

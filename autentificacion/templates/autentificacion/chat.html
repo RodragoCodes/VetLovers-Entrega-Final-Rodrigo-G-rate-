@@ -1,0 +1,35 @@
+{% extends 'productos/base.html' %}
+{% load static %}
+{% load humanize %}
+{% block titulo %}
+    Chat Interactivo
+{% endblock titulo %}
+{% block Contenido %}
+<br>    
+<div class="mb-5">
+    <h3 class="mb-4">Comentarios</h3>
+    
+    {% for post in posts  %}
+        
+    
+        
+    <div class="media mb-4">
+        <img src="{% static 'productos/img/user2.jpg' %}" alt="Image" class="img-fluid mr-3 mt-1" style="width: 45px;">
+        <div class="media-body">
+            <h6>{{post.user.username}} <small><i>{{post.timestamp}}</i></small></h6>
+            <p>{{post.content}}</p>
+            
+        </div>
+    </div>
+    {% endfor %}
+    <div class="media mb-4">
+        &nbsp  &nbsp  &nbsp  &nbsp 
+        <form method="post">
+            {% csrf_token %}
+            {{form.as_p}}
+            <input type="submit" value="Agregar Comentario">
+        </form>
+    </div>
+</div>
+
+{% endblock Contenido %}

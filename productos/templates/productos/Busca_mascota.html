@@ -1,0 +1,23 @@
+{% extends 'productos/base.html' %}
+{% load static %}
+{% block titulo %}
+    Buscar Mascota
+{% endblock titulo %}
+{% block Contenido %}
+<br>    
+<body>
+    <form action= "{% url 'buscarmascota' %}" method="get">
+        <p>
+            Indique una Mascota:
+            <input type="text" name="Mascota">
+            
+        </p>
+        <input type="submit" value="Buscar">
+
+    </form>
+    
+</body>
+
+
+{% endblock Contenido %}
+    

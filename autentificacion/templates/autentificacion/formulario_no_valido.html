@@ -1,0 +1,13 @@
+{% extends 'productos/base.html' %}
+{% load static %}
+{% block titulo %}
+    ERROR
+{% endblock titulo %}
+{% block Contenido %}
+<br>    
+<h1>Formulario no Valido favor volver a inicio o vuelve a intentarlo</h1>
+<br>
+<a href="{% url 'inicio' %}" class="btn btn-lg btn-primary mt-3 mt-md-4 px-4">Volver a Inicio</a>
+<a href="{% url 'login' %}" class="btn btn-lg btn-primary mt-3 mt-md-4 px-4">Volver a Intentar</a>
+
+{% endblock Contenido %}

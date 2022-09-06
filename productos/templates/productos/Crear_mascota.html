@@ -1,0 +1,19 @@
+{% extends 'productos/base.html' %}
+{% load static %}
+{% block titulo %}
+    Crear Mascota
+{% endblock titulo %}
+{% block Contenido %}
+
+<br> 
+   
+<body>
+    <form method="POST"> {% csrf_token %}
+         
+        {{ formulario.as_p }}
+        <input type="submit" value="Crear">
+        
+    </form>
+
+
+{% endblock Contenido %}

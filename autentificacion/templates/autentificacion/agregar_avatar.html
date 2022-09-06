@@ -1,0 +1,14 @@
+{% extends 'productos/base.html' %}
+{% load static %}
+{% block titulo %}
+    Agregar Avatar
+{% endblock titulo %}
+{% block Contenido %}
+<br>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit" value="Cargar">
+</form>
+
+{% endblock Contenido %}

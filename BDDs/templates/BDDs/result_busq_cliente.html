@@ -1,0 +1,27 @@
+{% extends 'productos/base.html' %}
+{% load static %}
+{% block titulo %}
+    Clientes encontrados
+{% endblock titulo %}
+{% block Contenido %}
+<h1>Resultados</h1>        
+<br> 
+
+{% for c in Cliente %}
+                              
+            
+    <div class="media mb-4">
+        <img src="{% static 'productos/img/user2.jpg' %}" alt="Image" class="img-fluid mr-3 mt-1" style="width: 95px;">
+        <div class="media-body">
+            <h6>{{c.nombre}} <small><i>{{c.email}}</i></small></h6>
+            <p>Direccion: {{c.direccion}}</p>
+            <p>Ciudad de procedencia: {{c.ciudad}}</p>
+            <p>Atenciones realizadas: {{c.cantidad_atenciones}}</p>
+
+        </div>
+    </div>
+
+{% endfor %}
+
+{% endblock Contenido %}
+    

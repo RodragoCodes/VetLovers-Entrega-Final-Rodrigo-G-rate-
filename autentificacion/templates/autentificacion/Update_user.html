@@ -1,0 +1,17 @@
+{% extends 'productos/base.html' %}
+{% load static %}
+{% block titulo %}
+    Editar Usuario
+{% endblock titulo %}
+{% block Contenido %}
+<h1>Editando información de {{request.user.username}}</h1>
+<br>
+    <form method="post">
+
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" value="Editar">
+
+    </form>
+
+{% endblock Contenido %}
