@@ -1,5 +1,6 @@
 # Proyecto Final Curso CoderHouse Python 'Veterinaria'
 # Comision 40150
+# Alumno: Rodrigo Gárate Lagos
 
 Página web pensada para uso interno de una clínica veterinaria, desarrollada por Rodrigo Gárate, la misma cuenta con diferentes pestañas que interactúan entre sí, entre las más importantes se encuentra:
 1) Pestaña Cliente: En esta pestaña podrás visualizar los diferentes clientes atendidos en la clínica veterinaria con sus datos personales, adicionalmente cuenta con un formulario de búsqueda y un formulario para agregar clientes nuevos a la base de datos ("cliente")
